@@ -33,7 +33,9 @@ Element displaying metadata for a URL.
           <span class="reference-container">{{ article.journal }}</span>
         </template>
 
-        <template if="{{ article.journal &amp;&amp; article.year }}">&middot;</template>
+        <template if="{{ article.journal &amp;&amp; article.year }}">
+          <span class="reference-separator"> &middot; </span>
+        </template>
 
         <template if="{{ article.year }}">
           <span class="reference-year">{{ article.year }}</span>
