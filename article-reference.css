@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.reference-title {
+  display: block;
+  text-decoration: none;
+}
+
+.reference-title:hover {
+  text-decoration: underline;
+}
+
+.reference-author:not(:last-of-type):after {
+  content: ", ";
+}
