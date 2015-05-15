@@ -14,3 +14,7 @@
 .reference-author:not(:last-of-type):after {
   content: ", ";
 }
+
+.reference-original-text {
+  font-size: 1rem;
+}

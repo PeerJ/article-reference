@@ -13,12 +13,12 @@ Element displaying metadata for a URL.
 @status alpha
 @homepage https://github.com/peerj/article-reference
 -->
-<polymer-element name="article-reference" attributes="url title">
+<polymer-element name="article-reference" attributes="url originalTitle originalText">
   <template>
     <link rel="stylesheet" href="article-reference.css">
 
     <template if="{{ article }}">
-      <template if="{{ !title }}">
+      <template if="{{ !originalTitle }}">
         <a class="reference-title" href="{{ url }}">{{ article.title }}</a>
       </template>
 
@@ -41,6 +41,10 @@ Element displaying metadata for a URL.
           <span class="reference-year">{{ article.year }}</span>
         </template>
       </div>
+
+      <template if="{{ originalText }}">
+        <div class="reference-original-text">{{ originalText }}</div>
+      </template>
     </template>
 
     <template if="{{ loading }}">
@@ -65,7 +69,8 @@ Element displaying metadata for a URL.
   <script>
     Polymer({
       url: '',
-      title: '',
+      originalTitle: '',
+      originalText: '',
       go: function() {
         this.article = null;
 
